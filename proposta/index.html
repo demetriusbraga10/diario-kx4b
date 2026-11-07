@@ -507,32 +507,27 @@ html.js .nojs-only{display:none}
 .cd-it.on .cd-ck::after{content:"✓"}
 .cd-n b{display:block;font-weight:600;font-size:15.5px}
 .cd-n small{display:block;font-size:13.5px;color:var(--ink-2);margin-top:1px}
-.cd-v{font:600 16px var(--display);color:var(--canhamo);white-space:nowrap;font-variant-numeric:tabular-nums}
+.cd-v{font:400 15px var(--display);color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
 .cd-v small{font-size:12px;font-weight:500}
 .cd-mes{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0 14px 12px 48px;font-size:13.5px;color:var(--ink-2)}
 .cd-seg{display:inline-flex;border:1px solid var(--canhamo);border-radius:var(--r);overflow:hidden}
 .cd-seg button{min-height:32px;padding:0 10px;font:500 13px var(--display);color:var(--canhamo);background:transparent;border:0;cursor:pointer}
 .cd-seg button+button{border-left:1px solid var(--canhamo)}
 .cd-seg button.on{background:var(--canhamo);color:var(--linho)}
-.cd-tot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 1.2fr;gap:8px;border-top:1.5px solid var(--ink);padding-top:12px}
-.cd-tot.vazio{display:block}
-.cd-tot.vazio p{font-size:14.5px;color:var(--ink-2)}
-.cd-tot>div{background:var(--creme);border-radius:var(--r);padding:10px 14px}
-.cd-tot b{display:block;font:400 26px/1.05 var(--titulo);color:var(--ink);font-variant-numeric:tabular-nums;margin-top:4px}
-.cd-tot .cd-ciclo{background:var(--ameixa)}
-.cd-tot .cd-ciclo .k{color:var(--rosa)}
-.cd-tot .cd-ciclo b{color:var(--linho)}
+.cd-tot{border-top:1px solid var(--linha);padding-top:10px;max-width:440px}
+.cd-tot p{font-size:14px;color:var(--ink-2)}
+.cd-tot dl{display:grid;gap:0}
+.cd-tot dl>div{display:flex;justify-content:space-between;gap:16px;padding:5px 0;font-size:14.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.cd-tot dt::first-letter{text-transform:uppercase}
+.cd-tot dd{color:var(--ink)}
+.cd-tot .cd-ciclo{border-top:1px solid var(--linha);margin-top:4px;padding-top:9px}
 .sum-it.pk-sum small{display:block}
 @media (max-width:820px){
-  .cd-tot{grid-template-columns:1fr 1fr 1fr}
-  .cd-tot .cd-ciclo{grid-column:1 / -1}
 }
 @media (max-width:600px){
   .cd-b{grid-template-columns:20px minmax(0,1fr);gap:4px 10px;padding:11px 12px}
   .cd-v{grid-column:2}
   .cd-mes{padding-left:42px}
-  .cd-tot b{font-size:20px}
-  .cd-tot .k{font-size:9.5px;letter-spacing:.08em}
 }
 </style>
 </head>
@@ -846,8 +841,7 @@ window.DECK_PLUGINS.push(DK => {
       <div class="cd-g"><span class="k">avulsos · para quando fizer sentido</span><ul>${itens(P.itens.filter(i => i.avulso))}</ul></div>
       <div class="cd-tot${vazio() ? " vazio" : ""}">
         ${vazio() ? `<p>Os valores de cada mês aparecem aqui quando vocês escolherem.</p>` :
-          MES.map((m, i) => `<div><span class="k">${i + 1}º mês · ${m}</span><b>${brl(t[i])}</b></div>`).join("") +
-          `<div class="cd-ciclo"><span class="k">total do ciclo</span><b>${brl(ciclo())}</b></div>`}
+          `<dl>${MES.map((m, i) => `<div><dt>${m}</dt><dd>${brl(t[i])}</dd></div>`).join("")}<div class="cd-ciclo"><dt>nos três meses</dt><dd>${brl(ciclo())}</dd></div></dl>`}
       </div>`;
   };
   const muda = msg => { DK.save(); pinta(); if (msg) toast(msg); };
@@ -871,7 +865,7 @@ window.DECK_PLUGINS.push(DK => {
       if (vazio()) return ["SEU PACOTE", "Nenhum item escolhido"];
       const t = totais();
       return ["SEU PACOTE", ...linhasTexto(), ...(plano() ? [] : ["Sem o suporte criativo mensal"]),
-        MES.map((m, i) => `${m[0].toUpperCase() + m.slice(1)}: ${brl(t[i])}`).join(" · "), `Total do ciclo: ${brl(ciclo())}`];
+        MES.map((m, i) => `${m[0].toUpperCase() + m.slice(1)}: ${brl(t[i])}`).join(" · "), `Nos três meses: ${brl(ciclo())}`];
     },
     html() {
       const ver = `<button data-gs="${DK.$$(".slide").indexOf($("#pk").closest(".slide"))}">${vazio() ? "escolher" : "ver"}</button>`;
@@ -879,7 +873,7 @@ window.DECK_PLUGINS.push(DK => {
       const t = totais();
       return `<h4>Seu pacote</h4><div class="sum-it ok pk-sum"><span class="ic">✓</span><div>${ver}
         ${linhasTexto().map(l => `<small>${esc(l.slice(2))}</small>`).join("")}
-        <small><b>${MES.map((m, i) => `${m.slice(0, 3)} ${brl(t[i])}`).join(" · ")} · ciclo ${brl(ciclo())}</b></small></div></div>`;
+        <small>${MES.map((m, i) => `${m.slice(0, 3)} ${brl(t[i])}`).join(" · ")} · nos três meses ${brl(ciclo())}</small></div></div>`;
     }
   };
 
