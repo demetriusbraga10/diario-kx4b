@@ -493,66 +493,46 @@ html:not(.js) .nojs-aviso{display:block;background:var(--acento);color:var(--can
   .ex-row{grid-template-columns:1fr}
 }
 
-/* carrinho do pacote (carrinho.js) */
+/* cardápio do pacote (carrinho.js, v2): nada vem marcado; o escolhido ganha fundo claro e ✓ */
 html.js .nojs-only{display:none}
-.pk-slot{display:flex;gap:8px;align-items:center;margin-top:auto;padding-top:6px}
-.cat .pk-slot{margin-top:6px}
-.pk-plano{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.pk-b{min-height:44px;padding:0 18px;border-radius:var(--r);border:1.5px solid var(--ink);font:600 15px var(--display);color:var(--ink);background:transparent;cursor:pointer}
-.pk-b:hover{background:var(--creme)}
-.pk-b.on{background:var(--canhamo);border-color:var(--canhamo);color:var(--linho)}
-.pk-x{background:none;border:0;font:500 14px var(--display);color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:8px 4px}
-.pk{margin-top:8px;display:grid;gap:12px}
-.pk .k{display:block}
-.pk-fixa{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 20px;align-items:center;background:var(--canhamo);color:var(--linho);border-radius:var(--r);padding:16px 18px}
-.pk-fixa .k{color:var(--acento)}
-.pk-fixa .pk-n b{font:400 28px/1.05 var(--titulo);display:block;margin:2px 0;color:var(--linho)}
-.pk-fixa .pk-n small{font-size:13.5px;color:var(--sobre-escuro-2)}
-.pk-op{display:flex;gap:8px;flex-wrap:wrap}
-.pk-op button{display:grid;gap:2px;text-align:left;padding:10px 14px;border-radius:var(--r);border:1.5px solid var(--sobre-escuro-2);color:var(--linho);background:transparent;cursor:pointer;font-family:var(--display)}
-.pk-op button span{font-size:12.5px;color:var(--sobre-escuro-2)}
-.pk-op button b{font:600 19px var(--display);font-variant-numeric:tabular-nums}
-.pk-op button b small{font-size:12px;font-weight:500;color:inherit}
-.pk-op button.on{background:var(--acento);border-color:var(--acento);color:var(--canhamo)}
-.pk-op button.on span{color:var(--canhamo)}
-.pk-lista{list-style:none;display:grid;border-top:1.5px solid var(--ink)}
-.pk-l{display:grid;grid-template-columns:minmax(0,1fr) auto 104px 40px;gap:8px 14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--linha)}
-.pk-n b{display:block;font-weight:600;color:var(--ink);font-size:16px}
-.pk-n small{display:block;font-size:13.5px;color:var(--ink-2);margin-top:1px}
-.pk-fixo{font-size:14px;color:var(--ink-2)}
-.pk-seg{display:inline-flex;border:1.5px solid var(--ink);border-radius:var(--r);overflow:hidden}
-.pk-seg button{min-height:34px;padding:0 10px;font:600 13px var(--display);color:var(--ink);background:transparent;border:0;cursor:pointer}
-.pk-seg button+button{border-left:1px solid var(--linha)}
-.pk-seg button.on{background:var(--ink);color:var(--linho)}
-.pk-v{text-align:right;font:600 17px var(--display);color:var(--canhamo);font-variant-numeric:tabular-nums;white-space:nowrap}
-.pk-menos{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:500 22px/1 var(--display);cursor:pointer;display:grid;place-items:center}
-.pk-menos:hover{background:var(--prob);border-color:var(--prob);color:#fff}
-.pk-vazio{padding:14px 0;color:var(--ink-2);border-bottom:1px solid var(--linha)}
-.pk-add{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.pk-add .k{width:100%}
-.pk-add button{min-height:38px;padding:0 14px;border-radius:999px;border:1.5px dashed var(--ink);background:transparent;font:500 14px var(--display);color:var(--ink);cursor:pointer}
-.pk-add button b{font-weight:600;color:var(--canhamo);margin-left:4px}
-.pk-add button:hover{background:var(--creme);border-style:solid}
-.pk-tot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 1.2fr;gap:10px;margin-top:4px}
-.pk-tot>div{background:var(--creme);border-radius:var(--r);padding:12px 14px}
-.pk-tot b{display:block;font:400 30px/1.05 var(--titulo);color:var(--ink);font-variant-numeric:tabular-nums;margin-top:4px}
-.pk-tot .pk-ciclo{background:var(--ameixa)}
-.pk-tot .pk-ciclo .k{color:var(--rosa)}
-.pk-tot .pk-ciclo b{color:var(--linho)}
+.pk{margin-top:6px;display:grid;gap:16px}
+.cd-g .k{display:block;margin-bottom:6px}
+.cd-g ul{list-style:none;display:grid;gap:6px}
+.cd-it{border:1px solid var(--linha);border-radius:var(--r);background:transparent;transition:background .15s,border-color .15s}
+.cd-it.on{background:var(--ok-soft);border-color:var(--canhamo)}
+.cd-b{width:100%;display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;background:none;border:0;text-align:left;cursor:pointer;font-family:var(--display);color:var(--ink)}
+.cd-b:hover{background:rgba(0,0,0,.025)}
+.cd-ck{align-self:start;margin-top:1px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink-2);display:grid;place-items:center;font-size:12px;line-height:1}
+.cd-it.on .cd-ck{background:var(--canhamo);border-color:var(--canhamo);color:var(--linho)}
+.cd-it.on .cd-ck::after{content:"✓"}
+.cd-n b{display:block;font-weight:600;font-size:15.5px}
+.cd-n small{display:block;font-size:13.5px;color:var(--ink-2);margin-top:1px}
+.cd-v{font:600 16px var(--display);color:var(--canhamo);white-space:nowrap;font-variant-numeric:tabular-nums}
+.cd-v small{font-size:12px;font-weight:500}
+.cd-mes{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0 14px 12px 48px;font-size:13.5px;color:var(--ink-2)}
+.cd-seg{display:inline-flex;border:1px solid var(--canhamo);border-radius:var(--r);overflow:hidden}
+.cd-seg button{min-height:32px;padding:0 10px;font:500 13px var(--display);color:var(--canhamo);background:transparent;border:0;cursor:pointer}
+.cd-seg button+button{border-left:1px solid var(--canhamo)}
+.cd-seg button.on{background:var(--canhamo);color:var(--linho)}
+.cd-tot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 1.2fr;gap:8px;border-top:1.5px solid var(--ink);padding-top:12px}
+.cd-tot.vazio{display:block}
+.cd-tot.vazio p{font-size:14.5px;color:var(--ink-2)}
+.cd-tot>div{background:var(--creme);border-radius:var(--r);padding:10px 14px}
+.cd-tot b{display:block;font:400 26px/1.05 var(--titulo);color:var(--ink);font-variant-numeric:tabular-nums;margin-top:4px}
+.cd-tot .cd-ciclo{background:var(--ameixa)}
+.cd-tot .cd-ciclo .k{color:var(--rosa)}
+.cd-tot .cd-ciclo b{color:var(--linho)}
 .sum-it.pk-sum small{display:block}
 @media (max-width:820px){
-  .pk-fixa{grid-template-columns:1fr}
-  .pk-tot{grid-template-columns:1fr 1fr 1fr}
-  .pk-tot .pk-ciclo{grid-column:1 / -1}
+  .cd-tot{grid-template-columns:1fr 1fr 1fr}
+  .cd-tot .cd-ciclo{grid-column:1 / -1}
 }
 @media (max-width:600px){
-  .pk-l{grid-template-columns:minmax(0,1fr) auto 36px;gap:8px 10px}
-  .pk-l .pk-m{grid-column:1 / 2;grid-row:2}
-  .pk-l .pk-v{grid-column:2;grid-row:1}
-  .pk-l .pk-menos{grid-column:3;grid-row:1}
-  .pk-op{display:grid;grid-template-columns:1fr 1fr}
-  .pk-tot b{font-size:22px}
-  .pk-tot .k{font-size:9.5px;letter-spacing:.08em}
+  .cd-b{grid-template-columns:20px minmax(0,1fr);gap:4px 10px;padding:11px 12px}
+  .cd-v{grid-column:2}
+  .cd-mes{padding-left:42px}
+  .cd-tot b{font-size:20px}
+  .cd-tot .k{font-size:9.5px;letter-spacing:.08em}
 }
 </style>
 </head>
@@ -663,7 +643,6 @@ html.js .nojs-only{display:none}
           <li>Aprovação dos cortes, com uma rodada de ajuste em cada filme</li>
         </ul>
         <p class="prazo"><b>Roteiros:</b> até 11/11. <b>Corte aprovado do conceitual:</b> 19/11. <b>Precisa:</b> o formato do telão, com a organização da Expo. O videomaker filma e edita; a contratação e o pagamento dele são da Tiloro.</p>
-        <div class="pk-slot so-js" data-pk="filmes"></div>
       </div>
       <div class="trab">
         <div class="t-top"><span class="k">recomendado</span><span class="preco">R$ 1.800</span></div>
@@ -674,7 +653,6 @@ html.js .nojs-only{display:none}
           <li>Etiquetas de preço das peças</li>
         </ul>
         <p class="prazo"><b>Por quê:</b> a Expo acontece antes do site. A lista guarda quem se encantou, para a prévia do capítulo e para a venda. <b>Arte final:</b> 13/11. A impressão é da Tiloro.</p>
-        <div class="pk-slot so-js" data-pk="kit"></div>
       </div>
     </div>
   </div>
@@ -711,7 +689,6 @@ html.js .nojs-only{display:none}
       </table>
     </div>
     <p class="livro"><b>O Livro da Tiloro</b> junta num lugar só quem é a Tiloro, a voz da marca, o Dicionário, as regras do conteúdo, a receita dos vídeos e os modelos. Ele é montado a partir do diário e serve para qualquer pessoa que for criar para a Tiloro.</p>
-    <div class="pk-plano so-js"></div>
   </div>
 </section>
 
@@ -738,12 +715,12 @@ html.js .nojs-only{display:none}
   <div class="wrap">
     <p class="sec">[ <b>07</b> · depois ]</p>
     <h2>Para os próximos capítulos.</h2>
-    <p class="sub">Projetos avulsos, para quando fizer sentido. Nada disso precisa ser decidido agora.<span class="so-js"> Se algum já interessa, ponha no pacote e escolha o mês.</span></p>
+    <p class="sub">Projetos avulsos, para quando fizer sentido. Nada disso precisa ser decidido agora.<span class="so-js"> Se algum já interessa, é só escolher na tela do investimento.</span></p>
     <div class="cat">
-      <div><div class="c-top"><b>Kit de capítulo</b><span class="preco">R$ 4.200</span></div><p>A partir do capítulo 10: a cara gráfica do capítulo sobre a base da marca, pôsteres, abertura, lookbook digital e roteiro do filme.</p><div class="pk-slot so-js" data-pk="kitcap"></div></div>
-      <div><div class="c-top"><b>Experiência de compra</b><span class="preco">R$ 2.200</span></div><p>A embalagem, um cartão com a origem do tecido e o ritual de entrega. A produção é da Tiloro.</p><div class="pk-slot so-js" data-pk="exp"></div></div>
-      <div><div class="c-top"><b>Lookbook impresso ou zine</b><span class="preco">R$ 1.600</span></div><p>Para os stands e as feiras, onde a Tiloro já vende.</p><div class="pk-slot so-js" data-pk="look"></div></div>
-      <div><div class="c-top"><b>TV Tiloro</b><span class="preco">R$ 3.300</span></div><p>Para 2027: o formato, os episódios e a receita da série. A produção fica com um parceiro.</p><div class="pk-slot so-js" data-pk="tv"></div></div>
+      <div><div class="c-top"><b>Kit de capítulo</b><span class="preco">R$ 4.200</span></div><p>A partir do capítulo 10: a cara gráfica do capítulo sobre a base da marca, pôsteres, abertura, lookbook digital e roteiro do filme.</p></div>
+      <div><div class="c-top"><b>Experiência de compra</b><span class="preco">R$ 2.200</span></div><p>A embalagem, um cartão com a origem do tecido e o ritual de entrega. A produção é da Tiloro.</p></div>
+      <div><div class="c-top"><b>Lookbook impresso ou zine</b><span class="preco">R$ 1.600</span></div><p>Para os stands e as feiras, onde a Tiloro já vende.</p></div>
+      <div><div class="c-top"><b>TV Tiloro</b><span class="preco">R$ 3.300</span></div><p>Para 2027: o formato, os episódios e a receita da série. A produção fica com um parceiro.</p></div>
     </div>
   </div>
 </section>
@@ -753,7 +730,7 @@ html.js .nojs-only{display:none}
   <div class="wrap">
     <p class="sec">[ <b>08</b> · investimento ]</p>
     <h2>Seu pacote, mês a mês.</h2>
-    <p class="sub so-js">Monte do seu jeito: troque a opção, tire o que não quiser e acrescente um avulso. Os totais mudam na hora.</p>
+    <p class="sub so-js">Escolham o que faz sentido agora. Um clique põe no pacote, outro clique tira. Os valores de cada mês aparecem embaixo.</p>
     <div id="pk" class="pk so-js"></div>
     <div class="nojs-only">
     <div class="inv">
@@ -822,92 +799,86 @@ html.js .nojs-only{display:none}
 <div class="zoom" id="zoom" hidden><img id="zoomImg" alt=""><button class="ico-btn close" data-close aria-label="Fechar">×</button></div>
 <div class="toast" id="toast" role="status"></div>
 
-<script>const D = {"LET": {"p00": "M1054.4 314.4L27.6 314.4C16.4 314.4 7.4 305.3 7.4 294.1L7.4 18.3C7.4 12.2 12.4 7.2 18.6 7.2L1063.5 7.2C1069.6 7.2 1074.6 12.2 1074.6 18.3L1074.6 294.1C1074.6 305.3 1065.6 314.4 1054.4 314.4M1062.4 488.8L15.6 488.8C11.1 488.8 7.4 485.2 7.4 480.6L7.4 338.2C7.4 328.9 14.9 321.4 24.2 321.4L1057.8 321.4C1067.1 321.4 1074.6 328.9 1074.6 338.2L1074.6 476.6C1074.6 483.4 1069.2 488.8 1062.4 488.8M1063.5 0.2L18.6 0.2C8.5 0.2 0.4 8.3 0.4 18.3L0.4 480.5C0.4 489 7.2 495.8 15.7 495.8L1062.3 495.8C1073 495.8 1081.6 487.2 1081.6 476.5L1081.6 18.3C1081.6 8.3 1073.5 0.2 1063.5 0.2", "p01": "M140.3 434.3L140.3 375.1L180.7 375.1L180.7 381.9L150.3 381.9C149 381.9 147.9 383 147.9 384.3L147.9 398.2C147.9 399.5 149 400.5 150.3 400.5L174.9 400.5L174.9 407.3L150.3 407.3C149 407.3 147.9 408.4 147.9 409.7L147.9 425.1C147.9 426.4 149 427.5 150.3 427.5L180.7 427.5L180.7 434.3L140.3 434.3", "p02": "M61.2 434.3L61.2 375.1L68.9 375.1L68.9 396.8C68.9 398.9 70.6 400.5 72.6 400.5L96.4 400.5C98.4 400.5 100.1 398.9 100.1 396.8L100.1 375.1L107.8 375.1L107.8 434.3L100.1 434.3L100.1 411.1C100.1 409 98.4 407.3 96.4 407.3L72.6 407.3C70.6 407.3 68.9 409 68.9 411.1L68.9 434.3L61.2 434.3", "p03": "M207 434.3L207 375.1L215.6 375.1L230.8 404.4L235.5 414.6C236.1 415.7 237.6 415.7 238.1 414.6L242.8 404.4L258.1 375.1L266.7 375.1L266.7 434.3L259 434.3L259 401.6L259.5 390.6C259.6 389.6 258.2 389.3 257.7 390.2L253.3 400.3L242.3 421.1C241.2 423.1 239.1 424.4 236.8 424.4C234.5 424.4 232.4 423.1 231.3 421.1L220.3 400.3L215.8 390.3C215.4 389.3 214 389.7 214 390.7L214.7 401.6L214.7 434.3L207 434.3", "p04": "M306.9 385.3L306.9 404C306.9 405.9 308.5 407.4 310.4 407.4L321.7 407.4C328.8 407.4 335.8 404.8 335.8 395.2C335.8 384.6 328.8 381.9 321.7 381.9L310.4 381.9C308.5 381.9 306.9 383.5 306.9 385.3M299.3 434.3L299.3 375.1L322.9 375.1C334.6 375.1 343.7 381.6 343.7 395.2C343.7 407.8 334.6 414.2 322.9 414.2L310.7 414.2C308.6 414.2 306.9 415.9 306.9 418L306.9 434.3L299.3 434.3", "p05": "M589.1 427.7C575.6 427.7 569.4 418.1 569.4 404.6C569.4 391.1 575.6 381.5 589.1 381.5C598.3 381.5 603.9 385.9 606.7 393L614.8 393C611 381.1 602.1 374.2 589 374.2C571.1 374.2 561.3 387.6 561.3 404.6C561.3 421.7 571.1 435 589 435C602 435 610.9 428.2 614.8 416.4L606.6 416.4C603.8 423.4 598.3 427.7 589.1 427.7", "p06": "M641.3 409.6L641.3 375.1L649 375.1L649 409.6C649 422.6 653.1 427.8 663.8 427.8C674.7 427.8 678.7 422.6 678.7 409.6L678.7 375.1L686.3 375.1L686.3 409.6C686.3 427 679.5 435.2 663.7 435.2C648.4 435.2 641.3 427 641.3 409.6", "p07": "M718 434.3L718 375.1L725.7 375.1L725.7 422.3C725.7 425.2 728 427.5 730.9 427.5L756.7 427.5L756.7 434.3L718 434.3", "p08": "M783.5 434.3L783.5 386.7C783.5 384.1 781.3 381.9 778.7 381.9L764.7 381.9L764.7 375.1L809.8 375.1L809.8 381.9L795.8 381.9C793.2 381.9 791 384.1 791 386.7L791 434.3L783.5 434.3", "p09": "M831 409.6L831 375.1L838.7 375.1L838.7 409.6C838.7 422.6 842.9 427.8 853.6 427.8C864.4 427.8 868.5 422.6 868.5 409.6L868.5 375.1L876.1 375.1L876.1 409.6C876.1 427 869.2 435.2 853.5 435.2C838.1 435.2 831 427 831 409.6", "p10": "M915.4 384.6L915.4 401.5C915.4 403 916.7 404.3 918.2 404.3L932.3 404.3C939.4 404.3 945.7 401.7 945.7 393.3C945.7 384.5 939.4 381.9 932.3 381.9L918.2 381.9C916.7 381.9 915.4 383.1 915.4 384.6M907.8 434.3L907.8 375.1L933.5 375.1C945.1 375.1 953.7 381.5 953.7 393.3C953.7 400.1 950.3 405.2 945 407.9C942.7 409.1 942.1 412 943.6 414C944.1 414.6 944.5 415.3 944.9 416L955.5 434.3L946.5 434.3L936.1 416.1C933.9 412.1 930.7 410.7 924.9 410.7L918.6 410.7C916.9 410.7 915.4 412.1 915.4 413.9L915.4 434.3L907.8 434.3", "p11": "M980.3 434.3L980.3 375.1L1020.8 375.1L1020.8 381.9L990.4 381.9C989.1 381.9 988 383 988 384.3L988 398.2C988 399.5 989.1 400.5 990.4 400.5L1015 400.5L1015 407.3L990.4 407.3C989.1 407.3 988 408.4 988 409.7L988 425.1C988 426.4 989.1 427.5 990.4 427.5L1020.8 427.5L1020.8 434.3L980.3 434.3", "p12": "M193.9 61L193.9 90.9L162.8 90.9C151.7 90.9 142.8 99.9 142.8 110.9L142.8 260.5L112.3 260.5L112.3 110.9C112.3 99.9 103.4 90.9 92.3 90.9L61.2 90.9L61.2 61L193.9 61", "p13": "M230.5 61H261V260.5H230.5Z", "p14": "M438.4 230.9L438.4 260.5L302 260.5L302 61L332.4 61L332.4 206.8C332.4 220.1 343.2 230.9 356.5 230.9L438.4 230.9", "p15": "M538.7 233.3C498.1 233.3 465 200.2 465 159.4C465 118.4 498.1 85 538.7 85C579.3 85 612.3 118.4 612.3 159.4C612.3 200.2 579.3 233.3 538.7 233.3M538.7 55C481.3 55 434.6 101.9 434.6 159.4C434.6 216.6 481.3 263.2 538.7 263.2C596.2 263.2 643 216.6 643 159.4C643 101.9 596.2 55 538.7 55", "p16": "M708.1 90.4L733.6 90.4C744.2 90.4 753.2 98.6 753.6 109.2C754 120.3 745.1 129.5 734.1 129.5L708.1 129.5C697.3 129.5 688.6 120.7 688.6 109.9C688.6 99.1 697.3 90.4 708.1 90.4M756.5 165C753.4 160.6 754.7 154.6 759.3 151.8C773.7 143 783 127.3 783 109.9C783 97.1 777.8 84.8 768.5 75.5C759.2 66.2 747 61 734.1 61L663.9 61L663.9 260.5L693.3 260.5L693.3 174.2C693.3 165.8 700.2 158.9 708.7 158.9C713.6 158.9 718.2 161.2 721.1 165.2L790.4 260.5L825.8 260.5L756.5 165", "p17": "M916.4 233.3C875.8 233.3 842.8 200.2 842.8 159.4C842.8 118.4 875.8 85 916.4 85C957 85 990 118.4 990 159.4C990 200.2 957 233.3 916.4 233.3M916.4 55C859 55 812.3 101.9 812.3 159.4C812.3 216.6 859 263.2 916.4 263.2C973.9 263.2 1020.8 216.6 1020.8 159.4C1020.8 101.9 973.9 55 916.4 55", "p18": "M470.3 430.7L483.8 452C484.3 452.8 483.3 453.8 482.5 453.3L454.3 435.9C453.2 435.2 451.9 435.2 450.8 435.9L422.6 453.3C421.7 453.8 420.8 452.8 421.3 452L434.8 430.7C435.1 430.3 434.8 429.6 434.2 429.5L397 424.3C396 424.2 396 422.6 397 422.5L436.4 417.3C437 417.2 437.3 416.5 436.9 416L402.4 375.2C401.7 374.4 402.8 373.2 403.7 373.9L442.9 402.6C443.4 403 444.2 402.7 444.2 402.1L451.4 346.8C451.5 345.7 453.1 345.7 453.2 346.8L460.8 402.1C460.9 402.7 461.6 403 462.1 402.6L499.8 374C500.7 373.3 501.8 374.4 501.1 375.3L468.1 416C467.8 416.5 468 417.2 468.7 417.3L508 422.5C509.1 422.6 509.1 424.2 508 424.3L470.9 429.5C470.3 429.6 470 430.3 470.3 430.7"}, "LETVB": "0 0 1082 496", "LTC": {"ameixa": ["#3A1C36", "#3A1C36"], "linho": ["#E3DECB", "#E3DECB"], "acido": ["#B8C923", "#B8C923"]}, "IMG": {}, "FILES": {}, "META": {"key": "tiloro-proposta-suporte-07-11-26", "marca": "Tiloro", "titulo": "Proposta do suporte criativo", "data": "07/11/2026", "wa": "5534999995621", "txt": "Tiloro_Proposta-Suporte_respostas_07-11-26.txt"}, "PK": {"meses": ["novembro", "dezembro", "janeiro"], "planos": {"1": {"nome": "Curadoria e criação", "valor": 5900}, "2": {"nome": "Curadoria", "valor": 3900}}, "itens": [{"id": "filmes", "nome": "Filmes da Expo", "valor": 2400, "mes": 1, "padrao": true, "pag": "direção dos dois filmes · metade no ok, metade em 19/11"}, {"id": "kit", "nome": "Kit do stand 191", "valor": 1800, "mes": 1, "padrao": true, "pag": "cartão com QR, placa e etiquetas · metade no ok, metade em 13/11"}, {"id": "kitcap", "nome": "Kit de capítulo", "valor": 4200, "mes": 3, "avulso": true, "pag": "avulso · escolha o mês"}, {"id": "exp", "nome": "Experiência de compra", "valor": 2200, "mes": 2, "avulso": true, "pag": "avulso · escolha o mês"}, {"id": "look", "nome": "Lookbook impresso ou zine", "valor": 1600, "mes": 2, "avulso": true, "pag": "avulso · escolha o mês"}, {"id": "tv", "nome": "TV Tiloro", "valor": 3300, "mes": 3, "avulso": true, "pag": "avulso · escolha o mês"}]}};</script>
-<script>/* Tiloro · proposta do suporte criativo · carrinho do pacote (07/11/2026)
-   Os valores vêm de D.PK (build.py). Botões: [data-pk="id"] põe/tira um item; .pk-plano escolhe a opção do suporte;
-   #pk monta "Seu pacote" com os totais de cada mês. O pacote entra no resumo do WhatsApp por DK.sums.pacote. */
+<script>const D = {"LET": {"p00": "M1054.4 314.4L27.6 314.4C16.4 314.4 7.4 305.3 7.4 294.1L7.4 18.3C7.4 12.2 12.4 7.2 18.6 7.2L1063.5 7.2C1069.6 7.2 1074.6 12.2 1074.6 18.3L1074.6 294.1C1074.6 305.3 1065.6 314.4 1054.4 314.4M1062.4 488.8L15.6 488.8C11.1 488.8 7.4 485.2 7.4 480.6L7.4 338.2C7.4 328.9 14.9 321.4 24.2 321.4L1057.8 321.4C1067.1 321.4 1074.6 328.9 1074.6 338.2L1074.6 476.6C1074.6 483.4 1069.2 488.8 1062.4 488.8M1063.5 0.2L18.6 0.2C8.5 0.2 0.4 8.3 0.4 18.3L0.4 480.5C0.4 489 7.2 495.8 15.7 495.8L1062.3 495.8C1073 495.8 1081.6 487.2 1081.6 476.5L1081.6 18.3C1081.6 8.3 1073.5 0.2 1063.5 0.2", "p01": "M140.3 434.3L140.3 375.1L180.7 375.1L180.7 381.9L150.3 381.9C149 381.9 147.9 383 147.9 384.3L147.9 398.2C147.9 399.5 149 400.5 150.3 400.5L174.9 400.5L174.9 407.3L150.3 407.3C149 407.3 147.9 408.4 147.9 409.7L147.9 425.1C147.9 426.4 149 427.5 150.3 427.5L180.7 427.5L180.7 434.3L140.3 434.3", "p02": "M61.2 434.3L61.2 375.1L68.9 375.1L68.9 396.8C68.9 398.9 70.6 400.5 72.6 400.5L96.4 400.5C98.4 400.5 100.1 398.9 100.1 396.8L100.1 375.1L107.8 375.1L107.8 434.3L100.1 434.3L100.1 411.1C100.1 409 98.4 407.3 96.4 407.3L72.6 407.3C70.6 407.3 68.9 409 68.9 411.1L68.9 434.3L61.2 434.3", "p03": "M207 434.3L207 375.1L215.6 375.1L230.8 404.4L235.5 414.6C236.1 415.7 237.6 415.7 238.1 414.6L242.8 404.4L258.1 375.1L266.7 375.1L266.7 434.3L259 434.3L259 401.6L259.5 390.6C259.6 389.6 258.2 389.3 257.7 390.2L253.3 400.3L242.3 421.1C241.2 423.1 239.1 424.4 236.8 424.4C234.5 424.4 232.4 423.1 231.3 421.1L220.3 400.3L215.8 390.3C215.4 389.3 214 389.7 214 390.7L214.7 401.6L214.7 434.3L207 434.3", "p04": "M306.9 385.3L306.9 404C306.9 405.9 308.5 407.4 310.4 407.4L321.7 407.4C328.8 407.4 335.8 404.8 335.8 395.2C335.8 384.6 328.8 381.9 321.7 381.9L310.4 381.9C308.5 381.9 306.9 383.5 306.9 385.3M299.3 434.3L299.3 375.1L322.9 375.1C334.6 375.1 343.7 381.6 343.7 395.2C343.7 407.8 334.6 414.2 322.9 414.2L310.7 414.2C308.6 414.2 306.9 415.9 306.9 418L306.9 434.3L299.3 434.3", "p05": "M589.1 427.7C575.6 427.7 569.4 418.1 569.4 404.6C569.4 391.1 575.6 381.5 589.1 381.5C598.3 381.5 603.9 385.9 606.7 393L614.8 393C611 381.1 602.1 374.2 589 374.2C571.1 374.2 561.3 387.6 561.3 404.6C561.3 421.7 571.1 435 589 435C602 435 610.9 428.2 614.8 416.4L606.6 416.4C603.8 423.4 598.3 427.7 589.1 427.7", "p06": "M641.3 409.6L641.3 375.1L649 375.1L649 409.6C649 422.6 653.1 427.8 663.8 427.8C674.7 427.8 678.7 422.6 678.7 409.6L678.7 375.1L686.3 375.1L686.3 409.6C686.3 427 679.5 435.2 663.7 435.2C648.4 435.2 641.3 427 641.3 409.6", "p07": "M718 434.3L718 375.1L725.7 375.1L725.7 422.3C725.7 425.2 728 427.5 730.9 427.5L756.7 427.5L756.7 434.3L718 434.3", "p08": "M783.5 434.3L783.5 386.7C783.5 384.1 781.3 381.9 778.7 381.9L764.7 381.9L764.7 375.1L809.8 375.1L809.8 381.9L795.8 381.9C793.2 381.9 791 384.1 791 386.7L791 434.3L783.5 434.3", "p09": "M831 409.6L831 375.1L838.7 375.1L838.7 409.6C838.7 422.6 842.9 427.8 853.6 427.8C864.4 427.8 868.5 422.6 868.5 409.6L868.5 375.1L876.1 375.1L876.1 409.6C876.1 427 869.2 435.2 853.5 435.2C838.1 435.2 831 427 831 409.6", "p10": "M915.4 384.6L915.4 401.5C915.4 403 916.7 404.3 918.2 404.3L932.3 404.3C939.4 404.3 945.7 401.7 945.7 393.3C945.7 384.5 939.4 381.9 932.3 381.9L918.2 381.9C916.7 381.9 915.4 383.1 915.4 384.6M907.8 434.3L907.8 375.1L933.5 375.1C945.1 375.1 953.7 381.5 953.7 393.3C953.7 400.1 950.3 405.2 945 407.9C942.7 409.1 942.1 412 943.6 414C944.1 414.6 944.5 415.3 944.9 416L955.5 434.3L946.5 434.3L936.1 416.1C933.9 412.1 930.7 410.7 924.9 410.7L918.6 410.7C916.9 410.7 915.4 412.1 915.4 413.9L915.4 434.3L907.8 434.3", "p11": "M980.3 434.3L980.3 375.1L1020.8 375.1L1020.8 381.9L990.4 381.9C989.1 381.9 988 383 988 384.3L988 398.2C988 399.5 989.1 400.5 990.4 400.5L1015 400.5L1015 407.3L990.4 407.3C989.1 407.3 988 408.4 988 409.7L988 425.1C988 426.4 989.1 427.5 990.4 427.5L1020.8 427.5L1020.8 434.3L980.3 434.3", "p12": "M193.9 61L193.9 90.9L162.8 90.9C151.7 90.9 142.8 99.9 142.8 110.9L142.8 260.5L112.3 260.5L112.3 110.9C112.3 99.9 103.4 90.9 92.3 90.9L61.2 90.9L61.2 61L193.9 61", "p13": "M230.5 61H261V260.5H230.5Z", "p14": "M438.4 230.9L438.4 260.5L302 260.5L302 61L332.4 61L332.4 206.8C332.4 220.1 343.2 230.9 356.5 230.9L438.4 230.9", "p15": "M538.7 233.3C498.1 233.3 465 200.2 465 159.4C465 118.4 498.1 85 538.7 85C579.3 85 612.3 118.4 612.3 159.4C612.3 200.2 579.3 233.3 538.7 233.3M538.7 55C481.3 55 434.6 101.9 434.6 159.4C434.6 216.6 481.3 263.2 538.7 263.2C596.2 263.2 643 216.6 643 159.4C643 101.9 596.2 55 538.7 55", "p16": "M708.1 90.4L733.6 90.4C744.2 90.4 753.2 98.6 753.6 109.2C754 120.3 745.1 129.5 734.1 129.5L708.1 129.5C697.3 129.5 688.6 120.7 688.6 109.9C688.6 99.1 697.3 90.4 708.1 90.4M756.5 165C753.4 160.6 754.7 154.6 759.3 151.8C773.7 143 783 127.3 783 109.9C783 97.1 777.8 84.8 768.5 75.5C759.2 66.2 747 61 734.1 61L663.9 61L663.9 260.5L693.3 260.5L693.3 174.2C693.3 165.8 700.2 158.9 708.7 158.9C713.6 158.9 718.2 161.2 721.1 165.2L790.4 260.5L825.8 260.5L756.5 165", "p17": "M916.4 233.3C875.8 233.3 842.8 200.2 842.8 159.4C842.8 118.4 875.8 85 916.4 85C957 85 990 118.4 990 159.4C990 200.2 957 233.3 916.4 233.3M916.4 55C859 55 812.3 101.9 812.3 159.4C812.3 216.6 859 263.2 916.4 263.2C973.9 263.2 1020.8 216.6 1020.8 159.4C1020.8 101.9 973.9 55 916.4 55", "p18": "M470.3 430.7L483.8 452C484.3 452.8 483.3 453.8 482.5 453.3L454.3 435.9C453.2 435.2 451.9 435.2 450.8 435.9L422.6 453.3C421.7 453.8 420.8 452.8 421.3 452L434.8 430.7C435.1 430.3 434.8 429.6 434.2 429.5L397 424.3C396 424.2 396 422.6 397 422.5L436.4 417.3C437 417.2 437.3 416.5 436.9 416L402.4 375.2C401.7 374.4 402.8 373.2 403.7 373.9L442.9 402.6C443.4 403 444.2 402.7 444.2 402.1L451.4 346.8C451.5 345.7 453.1 345.7 453.2 346.8L460.8 402.1C460.9 402.7 461.6 403 462.1 402.6L499.8 374C500.7 373.3 501.8 374.4 501.1 375.3L468.1 416C467.8 416.5 468 417.2 468.7 417.3L508 422.5C509.1 422.6 509.1 424.2 508 424.3L470.9 429.5C470.3 429.6 470 430.3 470.3 430.7"}, "LETVB": "0 0 1082 496", "LTC": {"ameixa": ["#3A1C36", "#3A1C36"], "linho": ["#E3DECB", "#E3DECB"], "acido": ["#B8C923", "#B8C923"]}, "IMG": {}, "FILES": {}, "META": {"key": "tiloro-proposta-suporte-07-11-26", "marca": "Tiloro", "titulo": "Proposta do suporte criativo", "data": "07/11/2026", "wa": "5534999995621", "txt": "Tiloro_Proposta-Suporte_respostas_07-11-26.txt"}, "PK": {"meses": ["novembro", "dezembro", "janeiro"], "planos": {"1": {"nome": "Curadoria e criação", "valor": 5900, "resumo": "diário, calendário, olhar de fora, até 8 rascunhos, 4 peças-chave, 2 Reels e a leitura do mês"}, "2": {"nome": "Curadoria", "valor": 3900, "resumo": "diário, calendário, olhar de fora, até 4 rascunhos e o encontro do mês"}}, "itens": [{"id": "filmes", "nome": "Filmes da Expo", "valor": 2400, "mes": 1, "resumo": "direção dos dois filmes · metade no ok, metade em 19/11"}, {"id": "kit", "nome": "Kit do stand 191", "valor": 1800, "mes": 1, "resumo": "cartão com QR, placa e etiquetas · metade no ok, metade em 13/11"}, {"id": "kitcap", "nome": "Kit de capítulo", "valor": 4200, "mes": 3, "avulso": true, "resumo": "a cara gráfica do próximo capítulo"}, {"id": "exp", "nome": "Experiência de compra", "valor": 2200, "mes": 2, "avulso": true, "resumo": "embalagem, cartão com a origem do tecido e o ritual de entrega"}, {"id": "look", "nome": "Lookbook impresso ou zine", "valor": 1600, "mes": 2, "avulso": true, "resumo": "para os stands e as feiras"}, {"id": "tv", "nome": "TV Tiloro", "valor": 3300, "mes": 3, "avulso": true, "resumo": "o formato da série, para 2027"}]}};</script>
+<script>/* Tiloro · proposta do suporte criativo · cardápio do pacote (07/11/2026, v2)
+   Nada vem marcado: a pessoa escolhe na tela do investimento (#pk). Um clique põe, outro tira.
+   Os valores vêm de D.PK (build.py). O pacote entra no resumo do WhatsApp por DK.sums.pacote. */
 window.DECK_PLUGINS = window.DECK_PLUGINS || [];
 window.DECK_PLUGINS.push(DK => {
-  const { S, esc, $, $$, toast } = DK, P = D.PK, MES = P.meses;
+  const { S, esc, $, toast } = DK, P = D.PK, MES = P.meses;
   const brl = v => "R$ " + v.toLocaleString("pt-BR");
-  const st = S.x.pk = Object.assign({ plano: "1", on: {}, mes: {} }, S.x.pk || {});
-  P.itens.forEach(it => { if (st.on[it.id] === undefined) st.on[it.id] = !!it.padrao; if (!st.mes[it.id]) st.mes[it.id] = it.mes; });
+  const st = S.x.cardapio = Object.assign({ plano: "", on: {}, mes: {} }, S.x.cardapio || {});
+  P.itens.forEach(it => { if (!st.mes[it.id]) st.mes[it.id] = it.mes; });
   const item = id => P.itens.find(i => i.id === id);
   const plano = () => P.planos[st.plano];
+  const escolhidos = () => P.itens.filter(i => st.on[i.id]);
+  const vazio = () => !st.plano && !escolhidos().length;
 
   const totais = () => {
-    const t = MES.map(() => plano().valor);
-    P.itens.forEach(it => { if (st.on[it.id]) t[st.mes[it.id] - 1] += it.valor; });
+    const t = MES.map(() => plano() ? plano().valor : 0);
+    escolhidos().forEach(it => { t[st.mes[it.id] - 1] += it.valor; });
     return t;
   };
   const ciclo = () => totais().reduce((a, b) => a + b, 0);
 
-  /* botões espalhados pelas telas */
-  const pintaBotoes = () => {
-    $$("[data-pk]").forEach(el => {
-      const it = item(el.dataset.pk), on = st.on[it.id];
-      el.innerHTML = on
-        ? `<button class="pk-b on" data-pk-t="${it.id}">✓ No pacote</button><button class="pk-x" data-pk-t="${it.id}" aria-label="Tirar ${esc(it.nome)} do pacote">tirar</button>`
-        : `<button class="pk-b" data-pk-t="${it.id}">+ Pôr no pacote</button>`;
-    });
-    $$(".pk-plano").forEach(el => {
-      el.innerHTML = Object.entries(P.planos).map(([k, p]) =>
-        `<button class="pk-b${st.plano === k ? " on" : ""}" data-pk-p="${k}">${st.plano === k ? "✓ " : ""}Quero a opção ${k}</button>`).join("");
-    });
-  };
+  const linha = (attr, on, nome, resumo, preco, extra = "") => `
+    <li class="cd-it${on ? " on" : ""}">
+      <button class="cd-b" ${attr} aria-pressed="${on}">
+        <span class="cd-ck" aria-hidden="true"></span>
+        <span class="cd-n"><b>${esc(nome)}</b><small>${esc(resumo)}</small></span>
+        <span class="cd-v">${preco}</span>
+      </button>${extra}
+    </li>`;
 
-  /* tela "Seu pacote" */
-  const pintaCarrinho = () => {
+  const pinta = () => {
     const box = $("#pk"); if (!box) return;
-    const t = totais(), fora = P.itens.filter(i => !st.on[i.id]);
-    const linha = it => `<li class="pk-l">
-        <div class="pk-n"><b>${esc(it.nome)}</b><small>${esc(it.pag)}</small></div>
-        <div class="pk-m">${it.avulso
-          ? `<span class="pk-seg" role="group" aria-label="Mês de ${esc(it.nome)}">${MES.map((m, i) => `<button class="${st.mes[it.id] === i + 1 ? "on" : ""}" data-pk-m="${it.id}:${i + 1}">${m.slice(0, 3)}</button>`).join("")}</span>`
-          : `<span class="pk-fixo">${MES[it.mes - 1]}</span>`}</div>
-        <div class="pk-v">${brl(it.valor)}</div>
-        <button class="pk-menos" data-pk-t="${it.id}" aria-label="Tirar ${esc(it.nome)} do pacote">−</button>
-      </li>`;
+    const t = totais();
+    const planos = Object.entries(P.planos).map(([k, p]) =>
+      linha(`data-pk-p="${k}"`, st.plano === k, `Opção ${k} · ${p.nome}`, p.resumo, `${brl(p.valor)}<small>/mês</small>`)).join("");
+    const itens = lista => lista.map(it => linha(`data-pk-t="${it.id}"`, !!st.on[it.id], it.nome, it.resumo, brl(it.valor),
+      st.on[it.id] ? (it.avulso
+        ? `<div class="cd-mes"><span>em</span><span class="cd-seg" role="group" aria-label="Mês de ${esc(it.nome)}">${MES.map((m, i) =>
+            `<button class="${st.mes[it.id] === i + 1 ? "on" : ""}" data-pk-m="${it.id}:${i + 1}">${m}</button>`).join("")}</span></div>`
+        : `<div class="cd-mes"><span>em ${MES[it.mes - 1]}</span></div>`) : "")).join("");
     box.innerHTML = `
-      <div class="pk-fixa">
-        <div class="pk-n"><span class="k">todo mês · fixo</span><b>Suporte criativo</b><small>o primeiro mês na assinatura</small></div>
-        <div class="pk-op" role="group" aria-label="Opção do suporte criativo">${Object.entries(P.planos).map(([k, p]) =>
-          `<button class="${st.plano === k ? "on" : ""}" data-pk-p="${k}"><span>Opção ${k} · ${esc(p.nome)}</span><b>${brl(p.valor)}<small>/mês</small></b></button>`).join("")}</div>
-      </div>
-      <ul class="pk-lista">${P.itens.filter(i => st.on[i.id]).map(linha).join("") || `<li class="pk-vazio">Só o suporte criativo, por enquanto.</li>`}</ul>
-      ${fora.length ? `<div class="pk-add"><span class="k">acrescentar</span>${fora.map(i => `<button data-pk-t="${i.id}">+ ${esc(i.nome)} <b>${brl(i.valor)}</b></button>`).join("")}</div>` : ""}
-      <div class="pk-tot">
-        ${MES.map((m, i) => `<div><span class="k">${i + 1}º mês · ${m}</span><b>${brl(t[i])}</b></div>`).join("")}
-        <div class="pk-ciclo"><span class="k">total do ciclo</span><b>${brl(ciclo())}</b></div>
+      <div class="cd-g"><span class="k">todo mês · suporte criativo · escolham uma</span><ul>${planos}</ul></div>
+      <div class="cd-g"><span class="k">até a expo</span><ul>${itens(P.itens.filter(i => !i.avulso))}</ul></div>
+      <div class="cd-g"><span class="k">avulsos · para quando fizer sentido</span><ul>${itens(P.itens.filter(i => i.avulso))}</ul></div>
+      <div class="cd-tot${vazio() ? " vazio" : ""}">
+        ${vazio() ? `<p>Os valores de cada mês aparecem aqui quando vocês escolherem.</p>` :
+          MES.map((m, i) => `<div><span class="k">${i + 1}º mês · ${m}</span><b>${brl(t[i])}</b></div>`).join("") +
+          `<div class="cd-ciclo"><span class="k">total do ciclo</span><b>${brl(ciclo())}</b></div>`}
       </div>`;
   };
-
-  const pinta = () => { pintaBotoes(); pintaCarrinho(); };
   const muda = msg => { DK.save(); pinta(); if (msg) toast(msg); };
 
   document.addEventListener("click", e => {
     const t = e.target.closest("[data-pk-t]"), p = e.target.closest("[data-pk-p]"), m = e.target.closest("[data-pk-m]");
-    if (t) { const it = item(t.dataset.pkT); st.on[it.id] = !st.on[it.id];
-      muda(st.on[it.id] ? `${it.nome} no pacote · ${MES[st.mes[it.id] - 1]}` : `${it.nome} saiu do pacote`); }
-    else if (p) { st.plano = p.dataset.pkP; muda(`Suporte criativo: opção ${st.plano}`); }
-    else if (m) { const [id, n] = m.dataset.pkM.split(":"); st.mes[id] = +n; muda(`${item(id).nome} em ${MES[n - 1]}`); }
+    if (m) { const [id, n] = m.dataset.pkM.split(":"); st.mes[id] = +n; muda(`${item(id).nome} em ${MES[n - 1]}`); }
+    else if (t) { const it = item(t.dataset.pkT); st.on[it.id] = !st.on[it.id]; muda(st.on[it.id] ? `${it.nome} no pacote` : `${it.nome} saiu do pacote`); }
+    else if (p) { const k = p.dataset.pkP; st.plano = st.plano === k ? "" : k; muda(st.plano ? `Suporte criativo: opção ${k}` : "Suporte criativo saiu do pacote"); }
   });
 
   /* resumo do WhatsApp */
+  const linhasTexto = () => {
+    const L = [];
+    if (plano()) L.push(`• Suporte criativo · opção ${st.plano} · ${plano().nome}: ${brl(plano().valor)}/mês`);
+    escolhidos().forEach(i => L.push(`• ${i.nome}: ${brl(i.valor)} (${MES[st.mes[i.id] - 1]})`));
+    return L;
+  };
   DK.sums.pacote = {
     text() {
-      const t = totais(), L = ["SEU PACOTE", `• Suporte criativo · opção ${st.plano} · ${plano().nome}: ${brl(plano().valor)}/mês`];
-      P.itens.filter(i => st.on[i.id]).forEach(i => L.push(`• ${i.nome}: ${brl(i.valor)} (${MES[st.mes[i.id] - 1]})`));
-      const tirados = P.itens.filter(i => i.padrao && !st.on[i.id]);
-      if (tirados.length) L.push("Fora do pacote: " + tirados.map(i => i.nome).join(", "));
-      L.push(MES.map((m, i) => `${m[0].toUpperCase() + m.slice(1)}: ${brl(t[i])}`).join(" · "), `Total do ciclo: ${brl(ciclo())}`);
-      return L;
+      if (vazio()) return ["SEU PACOTE", "Nenhum item escolhido"];
+      const t = totais();
+      return ["SEU PACOTE", ...linhasTexto(), ...(plano() ? [] : ["Sem o suporte criativo mensal"]),
+        MES.map((m, i) => `${m[0].toUpperCase() + m.slice(1)}: ${brl(t[i])}`).join(" · "), `Total do ciclo: ${brl(ciclo())}`];
     },
     html() {
+      const ver = `<button data-gs="${DK.$$(".slide").indexOf($("#pk").closest(".slide"))}">${vazio() ? "escolher" : "ver"}</button>`;
+      if (vazio()) return `<h4>Seu pacote</h4><div class="sum-it"><span class="ic">·</span><div><b>Nenhum item escolhido</b> ${ver}</div></div>`;
       const t = totais();
-      return `<h4>Seu pacote</h4><div class="sum-it ok pk-sum"><span class="ic">✓</span><div>
-        <b>Suporte criativo · opção ${st.plano}</b> · ${brl(plano().valor)}/mês <button data-gs="${DK.$$(".slide").indexOf($("#pk").closest(".slide"))}">ver</button>
-        ${P.itens.filter(i => st.on[i.id]).map(i => `<small>${esc(i.nome)} · ${brl(i.valor)} · ${MES[st.mes[i.id] - 1]}</small>`).join("")}
+      return `<h4>Seu pacote</h4><div class="sum-it ok pk-sum"><span class="ic">✓</span><div>${ver}
+        ${linhasTexto().map(l => `<small>${esc(l.slice(2))}</small>`).join("")}
         <small><b>${MES.map((m, i) => `${m.slice(0, 3)} ${brl(t[i])}`).join(" · ")} · ciclo ${brl(ciclo())}</b></small></div></div>`;
     }
   };
